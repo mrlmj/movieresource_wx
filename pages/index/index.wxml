@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+  <!--标题-->
+  <view class="label_new">
+    <view class="left_line"></view>
+    <text>最近更新</text>
+  </view>
+  
+  <!--最新电影列表-->
+  <scroll-view scroll-y="true" bindscrolltolower="loadMore" style="height:1500rpx">
+      <view class="movie_box" wx:for="{{movies}}" wx:for-item="movie" data-movie-id="{{movie._id}}" bindtap="itemClick">
+        <image src="{{movie.image_url}}"></image>
+        <view class="movie_bref">
+          <view>
+            <text class="movie_title">{{movie.title}}</text>
+            <text class="movie_time">{{movie.time}}</text>
+          </view>
+          <view class="movie_category">[{{movie.types}}]</view>
+          <view class="movie_introduce_wrapper">
+            <view class="movie_introduce">{{movie.introduce}}</view>
+          </view>
+          <view class="movie_updatetime">{{movie.update_time}}</view>
+        </view>
+      </view>
+  </scroll-view>
+</view>

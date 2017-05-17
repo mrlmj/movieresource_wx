@@ -1,0 +1,31 @@
+<!--detail.wxml-->
+<view class="container">
+<!--电影-->
+<view class="movie_detail_box">
+  <image src="{{movieInfo.image_url}}"></image>
+  <view class="movie_detail_info">
+    <text class="title">{{movieInfo.title}}<text>({{movieInfo.time}})</text></text>
+    <text class="update_time">更新：{{movieInfo.update_time}}</text>
+    <text class="category">类型：{{movieInfo.types}}</text>
+    <text class="country">地区：{{movieInfo.countries}}</text>
+    <text class="actor">主演：{{movieInfo.actors[0]}}</text>
+  </view>
+</view>
+<!--简介-->
+<view class="introduce_box">
+    <view class="label"><view class="green_line"></view> <text>影视简介</text></view>
+    <view class="introduce">{{movieInfo.introduce}}</view>
+</view>
+
+<!--资源下载-->
+<view class="link_box">
+    <view class="label"><view class="green_line"></view> <text>资源下载</text></view>
+       <view class="link" wx:for="{{movieInfo.links}}" wx:for-item="link">
+        <view class="sub_label"><view class="red_line"></view> <text>{{link.label}}</text></view>
+        <view class="link_list">
+          <text data-torrent="{{torrent.value}}" wx:for="{{link.torrent}}" wx:for-item="torrent" bindtap="copy">{{torrent.title}}</text>
+        </view>
+       </view>
+</view>
+
+</view>
