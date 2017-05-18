@@ -7,7 +7,11 @@ var isLoadingMore = false;
 Page({
   data: {
     page: 1,
-    movies:[]
+    movies:[],
+    search: {
+      showClearSearch: false,
+      value: ""
+    }
   },
   onShow: function(options) {
     wx.showNavigationBarLoading();
@@ -30,6 +34,34 @@ Page({
     wx.navigateTo({
       url: '/pages/detail/detail?movieId=' + movie_id
     })
+  },
+
+  searchFocus: function() {
+    this.setData({
+      search: {
+        showClearSearch: true
+      }
+    });
+  },
+  searchBlur: function() {
+    this.setData({
+      search: {
+        showClearSearch: false
+      }
+    });
+  },
+  clearSearch: function() {
+    this.setData({
+      search: {
+        value: ""
+      }
+    });
+  },
+  searchSubmit: function(event) {
+    console.log(event.detail.value);
+    wx.navigateTo({
+      url: '/pages/search/search?searchValue=' + event.detail.value 
+    });
   }
 })
 

@@ -1,5 +1,12 @@
 <!--index.wxml-->
 <view class="container">
+  <!--搜索框-->
+  <view class="search_box">
+    <input type="text" value="{{search.value}}" confirm_type="search" placeholder="剧名或演员" bindfocus="searchFocus" bindblur="searchBlur" bindconfirm="searchSubmit"/>
+    <icon wx:if="{{search.showClearSearch}}" type="clear" size="18" bindtap="clearSearch"/>
+    <icon wx:else type="search" size="18" />
+  </view>
+
   <!--标题-->
   <view class="label_new">
     <view class="left_line"></view>
