@@ -1,2 +1,32 @@
 <!--category.wxml-->
-<text>category.wxml</text>
+
+<view class="container">
+
+<view class="select_box">
+<!--类型-->
+  <scroll-view scroll-x="true">
+    <text bindtap="selectType" wx:for="{{types}}" wx:for-item="type" wx:for-index="index" class="{{selector[0] == index ? 'active' : ''}}" data-type="{{index}}">{{type}}</text>
+  </scroll-view>
+  <!--分类-->
+  <scroll-view scroll-x="true">
+    <text bindtap="selectCategory" wx:for="{{categories}}" wx:for-item="category" wx:for-index="index" class="{{selector[1] == index ? 'active' : ''}}" data-category="{{index}}">{{category}}</text>
+  </scroll-view>
+  <!--年代-->
+  <scroll-view scroll-x="true">
+    <text bindtap="selectTime" wx:for="{{time}}" wx:for-item="year" wx:for-index="index" class="{{selector[2] == index ? 'active' : ''}}" data-time="{{index}}">{{year}}</text>
+  </scroll-view>
+  <!--地区-->
+    <scroll-view scroll-x="true">
+    <text bindtap="selectCountry" wx:for="{{countries}}" wx:for-item="country" wx:for-index="index" class="{{selector[3] == index ? 'active' : ''}}" data-country="{{index}}">{{country}}</text>
+  </scroll-view>
+</view>
+
+<scroll-view scroll-y="true" style="height:800rpx;" bindscrolltolower="loadMore" class="movie_box">
+  <view class="movie_list">
+    <view class="movie" wx:for="{{movies}}" wx:for-item="movie" data-movie-id="{{movie._id}}" bindtap="itemClick">
+      <image src="{{movie.image_url}}"></image>
+      <text>{{movie.title}}</text>
+    </view>
+  </view>
+</scroll-view>
+</view>

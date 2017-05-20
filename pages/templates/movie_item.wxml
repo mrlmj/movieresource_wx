@@ -1,0 +1,16 @@
+<template name="movie_item">
+  <view class="movie_box"  bindtap="itemClick" data-movie-id="{{_id}}">
+        <image src="{{image_url}}"></image>
+        <view class="movie_bref">
+          <view>
+            <text class="movie_title">{{title}}</text>
+            <text class="movie_time">{{time}}</text>
+          </view>
+          <view class="movie_category">[{{types}}]</view>
+          <view class="movie_introduce_wrapper">
+            <view class="movie_introduce">{{introduce}}</view>
+          </view>
+          <view class="movie_updatetime">{{update_time}}</view>
+        </view>
+</view>
+</template>

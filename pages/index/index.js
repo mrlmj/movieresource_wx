@@ -51,6 +51,7 @@ Page({
     });
   },
   clearSearch: function() {
+    console.log("click clear");
     this.setData({
       search: {
         value: ""
@@ -68,7 +69,7 @@ Page({
 function requestMovies(that){
   setTimeout(function(){
     wx.request({
-      url: 'http://localhost:3000/api/movies/all/all/all/10/' + that.data.page,
+      url: app.constants.base_url + 'all/all/all/10/' + that.data.page,
       success: function (res) {
         that.setData({
           movies: that.data.movies.concat(res.data),

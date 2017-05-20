@@ -1,12 +1,13 @@
 <!--index.wxml-->
+<import src="/pages/templates/movie_item" />
+<import src="/pages/templates/search_box" />
 <view class="container">
   <!--搜索框-->
-  <view class="search_box">
+    <view class="search_box">
     <input type="text" value="{{search.value}}" confirm_type="search" placeholder="剧名或演员" bindfocus="searchFocus" bindblur="searchBlur" bindconfirm="searchSubmit"/>
     <icon wx:if="{{search.showClearSearch}}" type="clear" size="18" bindtap="clearSearch"/>
     <icon wx:else type="search" size="18" />
   </view>
-
   <!--标题-->
   <view class="label_new">
     <view class="left_line"></view>
@@ -15,19 +16,8 @@
   
   <!--最新电影列表-->
   <scroll-view scroll-y="true" bindscrolltolower="loadMore" style="height:1500rpx">
-      <view class="movie_box" wx:for="{{movies}}" wx:for-item="movie" data-movie-id="{{movie._id}}" bindtap="itemClick">
-        <image src="{{movie.image_url}}"></image>
-        <view class="movie_bref">
-          <view>
-            <text class="movie_title">{{movie.title}}</text>
-            <text class="movie_time">{{movie.time}}</text>
-          </view>
-          <view class="movie_category">[{{movie.types}}]</view>
-          <view class="movie_introduce_wrapper">
-            <view class="movie_introduce">{{movie.introduce}}</view>
-          </view>
-          <view class="movie_updatetime">{{movie.update_time}}</view>
-        </view>
-      </view>
+    <block wx:for="{{movies}}">
+      <template is="movie_item" data="{{...item}}"></template>
+    </block>
   </scroll-view>
 </view>

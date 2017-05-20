@@ -1,0 +1,9 @@
+/* user.wxss */
+text {
+  vertical-align: center;
+  font-size: 24rpx;
+  position: absolute;
+  top: 50%;
+  margin-left: -150rpx;
+  left: 50%;
+}

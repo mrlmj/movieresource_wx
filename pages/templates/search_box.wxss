@@ -1,0 +1,17 @@
+.search_box {
+  margin-bottom: 40rpx;
+}
+
+.search_box input {
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+  font-size:26rpx;
+  padding-left: 20rpx;
+  height: 56rpx;
+}
+
+.search_box icon {
+  position: absolute;
+  right: 30rpx;
+  top: 44rpx;
+}

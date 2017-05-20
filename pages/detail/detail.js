@@ -1,4 +1,6 @@
 // detail.js
+var app = getApp();
+
 Page({
 
   /**
@@ -43,7 +45,7 @@ Page({
 
 function requestDetail(that) {
   wx.request({
-    url: 'http://localhost:3000/api/movies/detail/' + that.data.movieId,
+    url: app.constants.base_url + 'detail/' + that.data.movieId,
     success: function(res) {
       console.log(res);
       that.setData({

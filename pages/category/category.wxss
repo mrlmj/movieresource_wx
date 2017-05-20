@@ -1,1 +1,54 @@
 /* category.wxss */
+.select_box {
+  margin-top: 15rpx;
+}
+
+.select_box scroll-view {
+  margin: 8rpx 0px 8rpx 0rpx;
+  white-space: nowrap;
+}
+
+.select_box scroll-view text {
+  margin-left: 15rpx;
+  margin-bottom: 10rpx;
+  font-size: 26rpx;
+  padding: 10rpx 16rpx 10rpx 16rpx;
+  display: inline-block;
+  border-radius: 10rpx;
+
+}
+
+.select_box text.active {
+  background: #0096FB;
+  color: #fff;
+}
+
+.movie_box {
+  margin-top: 40rpx;
+}
+
+.movie_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.movie{
+  margin: 10rpx;
+}
+
+.movie image {
+  width: 230rpx;
+  height: 305rpx; 
+  display: block;
+}
+
+.movie text {
+  font-size: 24rpx;
+  width:230rpx;
+  display: block;
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+  overflow:hidden;
+  margin-top: 10rpx;
+}

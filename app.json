@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/category/category",
+    "pages/user/user",
     "pages/detail/detail",
     "pages/search/search"
   ],
@@ -25,10 +27,10 @@
         "selectedIconPath": "images/category_fill.png"
       },
       {
-        "pagePath": "pages/setting/setting",
+        "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "images/search.png",
-        "selectedIconPath": "images/search_fill.png"
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_fill.png"
       }
     ]
   }

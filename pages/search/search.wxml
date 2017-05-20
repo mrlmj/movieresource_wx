@@ -1,2 +1,21 @@
 <!--search.wxml-->
-<text>search.wxml</text>
+<import src="/pages/templates/movie_item" />
+<import src="/pages/templates/search_box" />
+
+<view class="container">
+
+  <!--搜索框-->
+    <view class="search_box">
+    <input type="text" value="{{search.value}}" confirm_type="search" placeholder="剧名或演员" bindfocus="searchFocus" bindblur="searchBlur" bindconfirm="searchSubmit"/>
+    <icon wx:if="{{search.showClearSearch}}" type="clear" size="18" bindtap="clearSearch"/>
+    <icon wx:else type="search" size="18" />
+  </view>
+
+<!--最新电影列表-->
+  <scroll-view scroll-y="true" bindscrolltolower="loadMore" style="height:1500rpx">
+    <block wx:for="{{movies}}">
+      <template is="movie_item" data="{{...item}}"></template>
+    </block>
+  </scroll-view>
+
+  </view>

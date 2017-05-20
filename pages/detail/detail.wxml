@@ -19,11 +19,11 @@
 
 <!--资源下载-->
 <view class="link_box">
-    <view class="label"><view class="green_line"></view> <text>资源下载</text></view>
+    <view class="label"><view class="green_line"></view> <text>资源下载</text><text class="tips">(点击标题复制下载链接)</text></view>
        <view class="link" wx:for="{{movieInfo.links}}" wx:for-item="link">
         <view class="sub_label"><view class="red_line"></view> <text>{{link.label}}</text></view>
         <view class="link_list">
-          <text data-torrent="{{torrent.value}}" wx:for="{{link.torrent}}" wx:for-item="torrent" bindtap="copy">{{torrent.title}}</text>
+          <text data-torrent="{{torrent.value}}" wx:for="{{link.torrents}}" wx:for-item="torrent" bindtap="copy">{{torrent.title}}</text>
         </view>
        </view>
 </view>

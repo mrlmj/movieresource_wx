@@ -1,1 +1,7 @@
 /* search.wxss */
+@import "../templates/movie_item.wxss";
+@import "../templates/search_box.wxss";
+
+.container {
+  padding: 30rpx 20rpx 0rpx 20rpx;
+}

@@ -58,6 +58,10 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 
+.label .tips {
+  font-size: 20rpx;
+}
+
 .introduce {
   margin-top: 16rpx;
   font-size:26rpx;
@@ -78,6 +82,8 @@
   flex-direction: column;
   font-size: 24rpx;
   line-height: 1.8;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #ccc;
 }
 
 .red_line {
